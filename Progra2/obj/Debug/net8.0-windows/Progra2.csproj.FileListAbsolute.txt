@@ -1,0 +1,16 @@
+D:\Uni\Progra II\project_1\Progra2\Progra2\bin\Debug\net8.0-windows\Progra2.exe
+D:\Uni\Progra II\project_1\Progra2\Progra2\bin\Debug\net8.0-windows\Progra2.deps.json
+D:\Uni\Progra II\project_1\Progra2\Progra2\bin\Debug\net8.0-windows\Progra2.runtimeconfig.json
+D:\Uni\Progra II\project_1\Progra2\Progra2\bin\Debug\net8.0-windows\Progra2.dll
+D:\Uni\Progra II\project_1\Progra2\Progra2\bin\Debug\net8.0-windows\Progra2.pdb
+D:\Uni\Progra II\project_1\Progra2\Progra2\obj\Debug\net8.0-windows\Progra2.Form1.resources
+D:\Uni\Progra II\project_1\Progra2\Progra2\obj\Debug\net8.0-windows\Progra2.csproj.GenerateResource.cache
+D:\Uni\Progra II\project_1\Progra2\Progra2\obj\Debug\net8.0-windows\Progra2.GeneratedMSBuildEditorConfig.editorconfig
+D:\Uni\Progra II\project_1\Progra2\Progra2\obj\Debug\net8.0-windows\Progra2.AssemblyInfoInputs.cache
+D:\Uni\Progra II\project_1\Progra2\Progra2\obj\Debug\net8.0-windows\Progra2.AssemblyInfo.cs
+D:\Uni\Progra II\project_1\Progra2\Progra2\obj\Debug\net8.0-windows\Progra2.csproj.CoreCompileInputs.cache
+D:\Uni\Progra II\project_1\Progra2\Progra2\obj\Debug\net8.0-windows\Progra2.dll
+D:\Uni\Progra II\project_1\Progra2\Progra2\obj\Debug\net8.0-windows\refint\Progra2.dll
+D:\Uni\Progra II\project_1\Progra2\Progra2\obj\Debug\net8.0-windows\Progra2.pdb
+D:\Uni\Progra II\project_1\Progra2\Progra2\obj\Debug\net8.0-windows\Progra2.genruntimeconfig.cache
+D:\Uni\Progra II\project_1\Progra2\Progra2\obj\Debug\net8.0-windows\ref\Progra2.dll
