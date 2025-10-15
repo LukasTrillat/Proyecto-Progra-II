@@ -111,27 +111,38 @@ namespace Progra2
         }
         private void boton_ingresar_ingrediente_Click(object sender, EventArgs e)
         {
-            //Toma los valores de las tres cajas de texto
-            string nombre = input_nombre_ingrediente.Text;
-            string unidad = input_unidad_ingrediente.Text;
-            string cantidad = input_cantidad_ingrediente.Text;
+            string nombre = input_nombre_ingrediente.Text.Trim();
+            string unidad = input_unidad_ingrediente.Text.Trim();
+            string cantidadTexto = input_cantidad_ingrediente.Text.Trim();
 
-            //Si los campos nombre y cantidad tienene algun valor, se agrega ingrediente al stock
-            if (nombre.Length > 0 && cantidad.Length > 0)
-            { Stock.agregar_ingrediente(new Ingrediente(nombre, unidad, Convert.ToInt32(cantidad))); }
-
-            Stock.actualizar_tabla(tabla_stock);
-        }
-
-        // --------- MANEJO DE PEDIDO --------- //
-        private void boton_eliminar_pedido_Click(object sender, EventArgs e)
-        {
-            if (tabla_pedido.CurrentRow != null)
+            // Validar nombre
+            if (string.IsNullOrWhiteSpace(nombre) || nombre.Any(char.IsDigit))
             {
-                DataGridViewRow fila = tabla_pedido.CurrentRow;
-                Pedido.Eliminar_pedido(nombre_menu: fila.Cells[0].Value.ToString(), tabla_stock, tabla_pedido, texto_total);
-                Pedido.Actualizar_Tabla(tabla_pedido);
+                MessageBox.Show("Ingrese un nombre válido (solo texto).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
+
+            // Validar unidad
+            if (string.IsNullOrWhiteSpace(unidad) || unidad.Any(char.IsDigit))
+            {
+                MessageBox.Show("Ingrese una unidad válida (solo texto).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validar cantidad
+            if (!int.TryParse(cantidadTexto, out int cantidad) || cantidad <= 0)
+            {
+                MessageBox.Show("Ingrese una cantidad numérica válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Agregar ingrediente
+            Stock.agregar_ingrediente(new Ingrediente(nombre, unidad, cantidad));
+            Stock.actualizar_tabla(tabla_stock);
+
+            input_nombre_ingrediente.Clear();
+            input_unidad_ingrediente.Clear();
+            input_cantidad_ingrediente.Clear();
         }
         private void InicializarMenus()
         {
@@ -210,13 +221,6 @@ namespace Progra2
                 boton: boton_ensalada_mixta
             );
         }
-        private void Configurar_botones_de_menu(Label text_label)
-        {
-            foreach (Menu menu in Menu.Menus)
-            {
-                menu.ConfigurarBoton(tabla_pedido, tabla_stock, texto_total);
-            }
-        }
         private void boton_generar_menu_Click(object sender, EventArgs e)
         // Actualiza la disponibilidad de los botones de menú
         {
@@ -232,6 +236,25 @@ namespace Progra2
                 }
             }
         }
+
+        // --------- MANEJO DE PEDIDO --------- //
+        private void boton_eliminar_pedido_Click(object sender, EventArgs e)
+        {
+            if (tabla_pedido.CurrentRow != null)
+            {
+                DataGridViewRow fila = tabla_pedido.CurrentRow;
+                Pedido.Eliminar_pedido(nombre_menu: fila.Cells[0].Value.ToString(), tabla_stock, tabla_pedido, texto_total);
+                Pedido.Actualizar_Tabla(tabla_pedido);
+            }
+        }
+        private void Configurar_botones_de_menu(Label text_label)
+        {
+            foreach (Menu menu in Menu.Menus)
+            {
+                menu.ConfigurarBoton(tabla_pedido, tabla_stock, texto_total);
+            }
+        }
+
 
         // ------------------ GENERAR BOLETA -----------------------------
         private void boton_generar_boleta_Click(object sender, EventArgs e)

@@ -7,12 +7,24 @@
       "RelativeMoniker": "D:0:0:{1AE7D1E1-B565-46A8-9284-0A9778DEEDB9}|Progra2\\Progra2.csproj|solutionrelative:progra2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1AE7D1E1-B565-46A8-9284-0A9778DEEDB9}|Progra2\\Progra2.csproj|c:\\users\\lstri\\source\\repos\\lukastrillat\\proyecto-progra-ii\\progra2\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AE7D1E1-B565-46A8-9284-0A9778DEEDB9}|Progra2\\Progra2.csproj|solutionrelative:progra2\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1AE7D1E1-B565-46A8-9284-0A9778DEEDB9}|Progra2\\Progra2.csproj|c:\\users\\lstri\\source\\repos\\lukastrillat\\proyecto-progra-ii\\progra2\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1AE7D1E1-B565-46A8-9284-0A9778DEEDB9}|Progra2\\Progra2.csproj|solutionrelative:progra2\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1AE7D1E1-B565-46A8-9284-0A9778DEEDB9}|Progra2\\Progra2.csproj|c:\\users\\lstri\\source\\repos\\lukastrillat\\proyecto-progra-ii\\progra2\\pdf_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AE7D1E1-B565-46A8-9284-0A9778DEEDB9}|Progra2\\Progra2.csproj|solutionrelative:progra2\\pdf_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1AE7D1E1-B565-46A8-9284-0A9778DEEDB9}|Progra2\\Progra2.csproj|c:\\users\\lstri\\source\\repos\\lukastrillat\\proyecto-progra-ii\\progra2\\stock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1AE7D1E1-B565-46A8-9284-0A9778DEEDB9}|Progra2\\Progra2.csproj|solutionrelative:progra2\\stock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AE7D1E1-B565-46A8-9284-0A9778DEEDB9}|Progra2\\Progra2.csproj|c:\\users\\lstri\\source\\repos\\lukastrillat\\proyecto-progra-ii\\progra2\\ingrediente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AE7D1E1-B565-46A8-9284-0A9778DEEDB9}|Progra2\\Progra2.csproj|solutionrelative:progra2\\ingrediente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1AE7D1E1-B565-46A8-9284-0A9778DEEDB9}|Progra2\\Progra2.csproj|c:\\users\\lstri\\source\\repos\\lukastrillat\\proyecto-progra-ii\\progra2\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,14 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{1AE7D1E1-B565-46A8-9284-0A9778DEEDB9}|Progra2\\Progra2.csproj|c:\\users\\lstri\\source\\repos\\lukastrillat\\proyecto-progra-ii\\progra2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1AE7D1E1-B565-46A8-9284-0A9778DEEDB9}|Progra2\\Progra2.csproj|solutionrelative:progra2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1AE7D1E1-B565-46A8-9284-0A9778DEEDB9}|Progra2\\Progra2.csproj|c:\\users\\lstri\\source\\repos\\lukastrillat\\proyecto-progra-ii\\progra2\\pdf_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1AE7D1E1-B565-46A8-9284-0A9778DEEDB9}|Progra2\\Progra2.csproj|solutionrelative:progra2\\pdf_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1AE7D1E1-B565-46A8-9284-0A9778DEEDB9}|Progra2\\Progra2.csproj|c:\\users\\lstri\\source\\repos\\lukastrillat\\proyecto-progra-ii\\progra2\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1AE7D1E1-B565-46A8-9284-0A9778DEEDB9}|Progra2\\Progra2.csproj|solutionrelative:progra2\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1AE7D1E1-B565-46A8-9284-0A9778DEEDB9}|Progra2\\Progra2.csproj|C:\\Users\\lstri\\source\\repos\\LukasTrillat\\Proyecto-Progra-II\\progra2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -42,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,7 +54,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
+              "Title": "Ingrediente.cs",
+              "DocumentMoniker": "C:\\Users\\lstri\\source\\repos\\LukasTrillat\\Proyecto-Progra-II\\Progra2\\Ingrediente.cs",
+              "RelativeDocumentMoniker": "Progra2\\Ingrediente.cs",
+              "ToolTip": "C:\\Users\\lstri\\source\\repos\\LukasTrillat\\Proyecto-Progra-II\\Progra2\\Ingrediente.cs",
+              "RelativeToolTip": "Progra2\\Ingrediente.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T13:17:34.65Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\lstri\\source\\repos\\LukasTrillat\\Proyecto-Progra-II\\Progra2\\Program.cs",
               "RelativeDocumentMoniker": "Progra2\\Program.cs",
@@ -58,25 +74,23 @@
               "RelativeToolTip": "Progra2\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T12:38:47.679Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-15T12:38:47.679Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Stock.cs",
               "DocumentMoniker": "C:\\Users\\lstri\\source\\repos\\LukasTrillat\\Proyecto-Progra-II\\Progra2\\Stock.cs",
               "RelativeDocumentMoniker": "Progra2\\Stock.cs",
               "ToolTip": "C:\\Users\\lstri\\source\\repos\\LukasTrillat\\Proyecto-Progra-II\\Progra2\\Stock.cs",
               "RelativeToolTip": "Progra2\\Stock.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAgwDoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T12:32:29.365Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-15T12:32:29.365Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "C:\\Users\\lstri\\source\\repos\\LukasTrillat\\Proyecto-Progra-II\\Progra2\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "Progra2\\Form1.Designer.cs",
@@ -84,25 +98,23 @@
               "RelativeToolTip": "Progra2\\Form1.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T12:20:19.481Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-15T12:20:19.481Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Menu.cs",
               "DocumentMoniker": "C:\\Users\\lstri\\source\\repos\\LukasTrillat\\Proyecto-Progra-II\\Progra2\\Menu.cs",
               "RelativeDocumentMoniker": "Progra2\\Menu.cs",
               "ToolTip": "C:\\Users\\lstri\\source\\repos\\LukasTrillat\\Proyecto-Progra-II\\Progra2\\Menu.cs",
               "RelativeToolTip": "Progra2\\Menu.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAowDoAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowDQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T03:25:17.432Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-15T03:25:17.432Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "PDF_manager.cs",
               "DocumentMoniker": "C:\\Users\\lstri\\source\\repos\\LukasTrillat\\Proyecto-Progra-II\\Progra2\\PDF_manager.cs",
               "RelativeDocumentMoniker": "Progra2\\PDF_manager.cs",
@@ -110,18 +122,17 @@
               "RelativeToolTip": "Progra2\\PDF_manager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T03:25:16.764Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-15T03:25:16.764Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "Pedido.cs",
               "DocumentMoniker": "C:\\Users\\lstri\\source\\repos\\LukasTrillat\\Proyecto-Progra-II\\Progra2\\Pedido.cs",
               "RelativeDocumentMoniker": "Progra2\\Pedido.cs",
               "ToolTip": "C:\\Users\\lstri\\source\\repos\\LukasTrillat\\Proyecto-Progra-II\\Progra2\\Pedido.cs",
               "RelativeToolTip": "Progra2\\Pedido.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAcwBIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-15T03:20:52.493Z",
               "EditorCaption": ""
@@ -134,22 +145,21 @@
               "RelativeDocumentMoniker": "Progra2\\Form1.cs",
               "ToolTip": "C:\\Users\\lstri\\source\\repos\\LukasTrillat\\Proyecto-Progra-II\\Progra2\\Form1.cs",
               "RelativeToolTip": "Progra2\\Form1.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwCQAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAcwH4AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-15T03:18:59.558Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\lstri\\source\\repos\\LukasTrillat\\Proyecto-Progra-II\\Progra2\\Form1.cs",
               "RelativeDocumentMoniker": "Progra2\\Form1.cs",
               "ToolTip": "C:\\Users\\lstri\\source\\repos\\LukasTrillat\\Proyecto-Progra-II\\Progra2\\Form1.cs [Design]",
               "RelativeToolTip": "Progra2\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T01:29:46.71Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-13T01:29:46.71Z"
             }
           ]
         }
