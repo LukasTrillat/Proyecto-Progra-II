@@ -1,5 +1,6 @@
 using System.Data;
 using System.IO;
+using Microsoft.Web.WebView2.WinForms;
 using System.Windows.Forms;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -8,32 +9,35 @@ namespace Progra2
 {
     public partial class Form1 : Form
     {
-        // para renderizar archivos PDF
-        private WebBrowser pdfViewerBoleta; // Para boleta
-        private WebBrowser pdfViewerCarta;  // Para carta
+        // Instancias de WebView2 para mostrar PDFs
+        private WebView2 pdfViewerBoleta;
+        private WebView2 pdfViewerCarta;
 
         public Form1()
         {
             InitializeComponent();
             InicializarMenus();
-            configurar_menus(texto_total);
+            Configurar_botones_de_menu(texto_total);
 
-            // == Panel Boleta == 
-            pdfViewerBoleta = new WebBrowser();
-            pdfViewerBoleta.Dock = DockStyle.Fill; // Ocupa todo el espacio del viewer
-            panel_boleta_pdf.Controls.Add(pdfViewerBoleta); // Agregar el viewer al panel
+            // == Panel Boleta ==
+            pdfViewerBoleta = new WebView2();
+            pdfViewerBoleta.Dock = DockStyle.Fill;
+            panel_boleta_pdf.Controls.Add(pdfViewerBoleta);
 
             // == Panel Carta ==
-            pdfViewerCarta = new WebBrowser();
-            pdfViewerCarta.Dock = DockStyle.Fill; // Ocupa todo el espacio del viewer
-            panel_carta_pdf.Controls.Add(pdfViewerCarta); // Agregar el viewer al panel
+            pdfViewerCarta = new WebView2();
+            pdfViewerCarta.Dock = DockStyle.Fill;
+            panel_carta_pdf.Controls.Add(pdfViewerCarta);
         }
 
 
         // ---------CARGA DE INGREDIENTES --------- //
 
+        //Almacena los datos del ultimo .csv cargado
         public DataTable tabla_cargada_actual;
+        
         private DataTable CargarCsvComoDataTable(string rutaCsv)
+        // Lectura de CSV y conversión a DataTable
         {
             DataTable dt = new DataTable();
             string[] lineas = File.ReadAllLines(rutaCsv);
@@ -59,6 +63,7 @@ namespace Progra2
             //Al presionar el botónde "Cargar CSV" se abre un dialogo (input de archivo) para cargar un .csv
             using (OpenFileDialog fileInput = new OpenFileDialog()
             {
+                //Parametros del dialogo
                 Filter = "Archivos CSV (*.csv)|*.csv",
                 Title = "Selecciona un archivo CSV"
             })
@@ -69,25 +74,29 @@ namespace Progra2
                 if (fileInput.ShowDialog() == DialogResult.OK)
                 {
                     string ruta = fileInput.FileName;
-                    tabla_cargada_actual = CargarCsvComoDataTable(ruta);
-                    tabla_ingredientes_cargados.DataSource = tabla_cargada_actual;
+                    tabla_cargada_actual = CargarCsvComoDataTable(ruta); //Actualización de tabla cargada
+                    tabla_ingredientes_cargados.DataSource = tabla_cargada_actual; //Actualización de tabla visual
                 }
             }
         }
         private void boton_agregar_stock_Click(object sender, EventArgs e)
         {
-
-            foreach (DataRow fila in tabla_cargada_actual.Rows)
+            if (tabla_cargada_actual != null)
             {
-                string nombre = fila[0]?.ToString() ?? "";
-                string unidad = fila[1]?.ToString() ?? "";
-                int cantidad = Convert.ToInt32(fila[2]);
+                //Carga los ingredientes de la tabla cargada al stock
+                foreach (DataRow fila in tabla_cargada_actual.Rows)
+                {
+                    string nombre = fila[0]?.ToString() ?? "";
+                    string unidad = fila[1]?.ToString() ?? "";
+                    int cantidad = Convert.ToInt32(fila[2]);
 
-                Stock.agregar_ingrediente(new Ingrediente(nombre, unidad, cantidad));
+                    Stock.agregar_ingrediente(new Ingrediente(nombre, unidad, cantidad));
+                }
+
+                //Actualización visual de tabla de stock
+                Stock.actualizar_tabla(tabla_stock);
+                MessageBox.Show($"Stock actualizado correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-            Stock.actualizar_tabla(tabla_stock);
-            MessageBox.Show($"Stock actualizado correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         // --------- MANEJO DE STOCK --------- //
@@ -100,13 +109,14 @@ namespace Progra2
                 Stock.actualizar_tabla(tabla_stock);
             }
         }
-
         private void boton_ingresar_ingrediente_Click(object sender, EventArgs e)
         {
+            //Toma los valores de las tres cajas de texto
             string nombre = input_nombre_ingrediente.Text;
             string unidad = input_unidad_ingrediente.Text;
             string cantidad = input_cantidad_ingrediente.Text;
 
+            //Si los campos nombre y cantidad tienene algun valor, se agrega ingrediente al stock
             if (nombre.Length > 0 && cantidad.Length > 0)
             { Stock.agregar_ingrediente(new Ingrediente(nombre, unidad, Convert.ToInt32(cantidad))); }
 
@@ -120,10 +130,9 @@ namespace Progra2
             {
                 DataGridViewRow fila = tabla_pedido.CurrentRow;
                 Pedido.Eliminar_pedido(nombre_menu: fila.Cells[0].Value.ToString(), tabla_stock, tabla_pedido, texto_total);
+                Pedido.Actualizar_Tabla(tabla_pedido);
             }
         }
-
-        //Creación de menús
         private void InicializarMenus()
         {
             Menu Papas_fritas = new Menu(
@@ -201,17 +210,15 @@ namespace Progra2
                 boton: boton_ensalada_mixta
             );
         }
-
-        // A cada menu le configura su botón
-        private void configurar_menus(Label text_label)
+        private void Configurar_botones_de_menu(Label text_label)
         {
             foreach (Menu menu in Menu.Menus)
             {
                 menu.ConfigurarBoton(tabla_pedido, tabla_stock, texto_total);
             }
         }
-
         private void boton_generar_menu_Click(object sender, EventArgs e)
+        // Actualiza la disponibilidad de los botones de menú
         {
             foreach (Menu menu in Menu.Menus)
             {
@@ -230,7 +237,7 @@ namespace Progra2
         private void boton_generar_boleta_Click(object sender, EventArgs e)
         {
             // Genera el PDF y guarda la ruta
-            string rutaPDF = PdfTools.generar_boleta(Pedido.lista_pedidos);
+            string rutaPDF = PDF_manager.generar_boleta(Pedido.lista_pedidos);
 
             if (File.Exists(rutaPDF))
                 MessageBox.Show("Boleta generada en: " + rutaPDF);
@@ -239,22 +246,37 @@ namespace Progra2
         }
 
         // ------------------ MOSTRAR BOLETA -----------------------------
-        private void boton_mostrar_boleta_Click(object sender, EventArgs e)
+        private async void boton_mostrar_boleta_Click(object sender, EventArgs e)
         {
-            // Generar el PDF y guardar la ruta
-            string rutaPDF = PdfTools.generar_boleta(Pedido.lista_pedidos);
-            PdfTools.mostrar_boleta(rutaPDF, pdfViewerBoleta);
-        }
-
-        // ------------------ GENERAR MENU -----------------------------
-        private void boton_generar_carta_Click(object sender, EventArgs e)
-        {
-            // Generar PDF
-            string rutaPDF = PdfTools.generar_menu(Menu.Menus);
+            string rutaPDF = PDF_manager.generar_boleta(Pedido.lista_pedidos);
 
             if (File.Exists(rutaPDF))
             {
-                pdfViewerCarta.Navigate(rutaPDF);
+                await pdfViewerBoleta.EnsureCoreWebView2Async();
+                pdfViewerBoleta.CoreWebView2.Navigate(rutaPDF);
+            }
+            else
+            {
+                MessageBox.Show("No se pudo generar la boleta.");
+            }
+        }
+
+        // ------------------ GENERAR MENU -----------------------------
+        private async void boton_generar_carta_Click(object sender, EventArgs e)
+        {
+            // Generar PDF
+            string rutaPDF = PDF_manager.generar_menu(Menu.Menus);
+
+            if (File.Exists(rutaPDF))
+            {
+                // Convertir la ruta a formato de URL local
+                string rutaURL = "file:///" + rutaPDF.Replace("\\", "/");
+
+                // Asegurar que WebView2 esté inicializado
+                await pdfViewerCarta.EnsureCoreWebView2Async();
+
+                // Navegar al archivo PDF
+                pdfViewerCarta.CoreWebView2.Navigate(rutaURL);
             }
             else
             {

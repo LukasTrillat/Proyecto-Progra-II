@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ignac\\OneDrive\\Desktop\\eeeeeeeexxx\\Progra2\\Progra2.csproj": {}
+    "C:\\Users\\lstri\\source\\repos\\LukasTrillat\\Proyecto-Progra-II\\Progra2\\Progra2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ignac\\OneDrive\\Desktop\\eeeeeeeexxx\\Progra2\\Progra2.csproj": {
+    "C:\\Users\\lstri\\source\\repos\\LukasTrillat\\Proyecto-Progra-II\\Progra2\\Progra2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ignac\\OneDrive\\Desktop\\eeeeeeeexxx\\Progra2\\Progra2.csproj",
+        "projectUniqueName": "C:\\Users\\lstri\\source\\repos\\LukasTrillat\\Proyecto-Progra-II\\Progra2\\Progra2.csproj",
         "projectName": "Progra2",
-        "projectPath": "C:\\Users\\ignac\\OneDrive\\Desktop\\eeeeeeeexxx\\Progra2\\Progra2.csproj",
-        "packagesPath": "C:\\Users\\ignac\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ignac\\OneDrive\\Desktop\\eeeeeeeexxx\\Progra2\\obj\\",
+        "projectPath": "C:\\Users\\lstri\\source\\repos\\LukasTrillat\\Proyecto-Progra-II\\Progra2\\Progra2.csproj",
+        "packagesPath": "C:\\Users\\lstri\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lstri\\source\\repos\\LukasTrillat\\Proyecto-Progra-II\\Progra2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ignac\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lstri\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -50,6 +50,10 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "dependencies": {
+            "Microsoft.Web.WebView2": {
+              "target": "Package",
+              "version": "[1.0.3537.50, )"
+            },
             "PdfiumViewer": {
               "target": "Package",
               "version": "[2.13.0, )"
@@ -86,7 +90,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
