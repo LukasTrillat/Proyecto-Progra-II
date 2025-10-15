@@ -1,16 +1,34 @@
 using System.Data;
 using System.IO;
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Progra2
 {
     public partial class Form1 : Form
     {
+        // para renderizar archivos PDF
+        private WebBrowser pdfViewerBoleta; // Para boleta
+        private WebBrowser pdfViewerCarta;  // Para carta
+
         public Form1()
         {
             InitializeComponent();
             InicializarMenus();
+            configurar_menus(texto_total);
+
+            // == Panel Boleta == 
+            pdfViewerBoleta = new WebBrowser();
+            pdfViewerBoleta.Dock = DockStyle.Fill; // Ocupa todo el espacio del viewer
+            panel_boleta_pdf.Controls.Add(pdfViewerBoleta); // Agregar el viewer al panel
+
+            // == Panel Carta ==
+            pdfViewerCarta = new WebBrowser();
+            pdfViewerCarta.Dock = DockStyle.Fill; // Ocupa todo el espacio del viewer
+            panel_carta_pdf.Controls.Add(pdfViewerCarta); // Agregar el viewer al panel
         }
+
 
         // ---------CARGA DE INGREDIENTES --------- //
 
@@ -69,6 +87,7 @@ namespace Progra2
             }
 
             Stock.actualizar_tabla(tabla_stock);
+            MessageBox.Show($"Stock actualizado correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         // --------- MANEJO DE STOCK --------- //
@@ -92,6 +111,16 @@ namespace Progra2
             { Stock.agregar_ingrediente(new Ingrediente(nombre, unidad, Convert.ToInt32(cantidad))); }
 
             Stock.actualizar_tabla(tabla_stock);
+        }
+
+        // --------- MANEJO DE PEDIDO --------- //
+        private void boton_eliminar_pedido_Click(object sender, EventArgs e)
+        {
+            if (tabla_pedido.CurrentRow != null)
+            {
+                DataGridViewRow fila = tabla_pedido.CurrentRow;
+                Pedido.Eliminar_pedido(nombre_menu: fila.Cells[0].Value.ToString(), tabla_stock, tabla_pedido, texto_total);
+            }
         }
 
         //Creación de menús
@@ -169,9 +198,19 @@ namespace Progra2
                     new Ingrediente("Tomate", "kg", 1),
                     new Ingrediente("Zanahoria rallada", "unid", 1)
                 },
-                boton_ensalada_mixta
+                boton: boton_ensalada_mixta
             );
         }
+
+        // A cada menu le configura su botón
+        private void configurar_menus(Label text_label)
+        {
+            foreach (Menu menu in Menu.Menus)
+            {
+                menu.ConfigurarBoton(tabla_pedido, tabla_stock, texto_total);
+            }
+        }
+
         private void boton_generar_menu_Click(object sender, EventArgs e)
         {
             foreach (Menu menu in Menu.Menus)
@@ -187,5 +226,41 @@ namespace Progra2
             }
         }
 
+        // ------------------ GENERAR BOLETA -----------------------------
+        private void boton_generar_boleta_Click(object sender, EventArgs e)
+        {
+            // Genera el PDF y guarda la ruta
+            string rutaPDF = PdfTools.generar_boleta(Pedido.lista_pedidos);
+
+            if (File.Exists(rutaPDF))
+                MessageBox.Show("Boleta generada en: " + rutaPDF);
+            else
+                MessageBox.Show("No se pudo generar la boleta.");
+        }
+
+        // ------------------ MOSTRAR BOLETA -----------------------------
+        private void boton_mostrar_boleta_Click(object sender, EventArgs e)
+        {
+            // Generar el PDF y guardar la ruta
+            string rutaPDF = PdfTools.generar_boleta(Pedido.lista_pedidos);
+            PdfTools.mostrar_boleta(rutaPDF, pdfViewerBoleta);
+        }
+
+        // ------------------ GENERAR MENU -----------------------------
+        private void boton_generar_carta_Click(object sender, EventArgs e)
+        {
+            // Generar PDF
+            string rutaPDF = PdfTools.generar_menu(Menu.Menus);
+
+            if (File.Exists(rutaPDF))
+            {
+                pdfViewerCarta.Navigate(rutaPDF);
+            }
+            else
+            {
+                MessageBox.Show("No se pudo generar el PDF.");
+            }
+        }
     }
+
 }

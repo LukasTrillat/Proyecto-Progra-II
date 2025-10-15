@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Progra2
 {
-    internal class Ingrediente
+    public class Ingrediente
     {
         public string Nombre { get; set; }
         public string Unidad { get; set; }
